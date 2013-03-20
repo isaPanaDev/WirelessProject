@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{71AA33EB-7E88-4611-81E1-1127DA74139F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WirelessProject</RootNamespace>
+    <AssemblyName>WirelessProject</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>DLL\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Toughbook.Gps">
+      <HintPath>Toughbook.Gps\bin\Release\Toughbook.Gps.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChooseIPForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChooseIPForm.Designer.cs">
+      <DependentUpon>ChooseIPForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DebugControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DebugControl.Designer.cs">
+      <DependentUpon>DebugControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GpsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GpsControl.Designer.cs">
+      <DependentUpon>GpsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OutputForm.Designer.cs">
+      <DependentUpon>OutputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PingMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PingMenu.Designer.cs">
+      <DependentUpon>PingMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlAssembler.cs" />
+    <Compile Include="HtmlTransforms.cs" />
+    <Compile Include="ListViewDB.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LEDBitmap.cs" />
+    <Compile Include="LEDPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Options.cs" />
+    <Compile Include="OutputControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OutputControl.Designer.cs">
+      <DependentUpon>OutputControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OutputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PingControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PingControl.Designer.cs">
+      <DependentUpon>PingControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PingObject.cs" />
+    <Compile Include="PingColumnOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PingColumnOptions.Designer.cs">
+      <DependentUpon>PingColumnOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="WForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WForm.Designer.cs">
+      <DependentUpon>WForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Wlog.cs" />
+    <EmbeddedResource Include="ChooseIPForm.resx">
+      <DependentUpon>ChooseIPForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DebugControl.resx">
+      <DependentUpon>DebugControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GpsControl.resx">
+      <DependentUpon>GpsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OutputForm.resx">
+      <DependentUpon>OutputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PingMenu.resx">
+      <DependentUpon>PingMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OutputControl.resx">
+      <DependentUpon>OutputControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PingControl.resx">
+      <DependentUpon>PingControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PingColumnOptions.resx">
+      <DependentUpon>PingColumnOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>WForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\log_template.html" />
+    <None Include="Images\green.bmp" />
+    <None Include="Images\default.bmp" />
+    <None Include="Images\orange.bmp" />
+    <None Include="Images\red.bmp" />
+    <None Include="Images\options.png" />
+    <None Include="Images\add.png" />
+    <None Include="Images\remove.png" />
+    <Content Include="DLL\log4net.dll" />
+    <Content Include="lib\Toughbook_DotNET.dll" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
