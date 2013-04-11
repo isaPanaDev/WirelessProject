@@ -14,7 +14,7 @@ namespace WirelessProject
 
     public partial class PingControl : UserControl
     {
-        #region Variables 
+        #region Variables
         public event PingStatusChangedEventHandler PingFailed;
 
         // LED related
@@ -24,7 +24,7 @@ namespace WirelessProject
         private Bitmap defaultLEDimage;
         private Bitmap orangeLEDimage;
         private bool failPingStatus; // Used to set the correct LED depending on all pings
-        private bool testStarted; 
+        private bool testStarted;
         private DebugControl debug;
         private int pingEventID = 1; // Ping Event ID
 
@@ -87,7 +87,7 @@ namespace WirelessProject
 
             pingBox.Visible = true;
             failPingStatus = false;
-            pingLED.ChangeColor(orangeLEDimage); 
+            pingLED.ChangeColor(orangeLEDimage);
             pingBox.Visible = true;
 
             testStarted = false;
@@ -112,9 +112,9 @@ namespace WirelessProject
             switch (host.Status)
             {
                 case HostStatus.Dead:
-                     pingLED.ChangeColor(redLEDimage);
-                     pingBox.Visible = true;
-                     failPingStatus = true;
+                    pingLED.ChangeColor(redLEDimage);
+                    pingBox.Visible = true;
+                    failPingStatus = true;
                     break;
 
                 case HostStatus.DnsError:
@@ -123,10 +123,10 @@ namespace WirelessProject
                     break;
 
                 case HostStatus.Alive:
-                    if (failPingStatus)  
+                    if (failPingStatus)
                         pingLED.ChangeColor(redLEDimage);
                     else
-                        pingLED.ChangeColor(greenLEDimage); 
+                        pingLED.ChangeColor(greenLEDimage);
                     pingBox.Visible = !pingBox.Visible; // blink it!
                     break;
 
@@ -161,8 +161,8 @@ namespace WirelessProject
                 {
                     OnPingFailed(false);
 
-                   // if (_selectedPinger.HostName == host.hostNoname)
-                   //     host.Status = HostStatus.Dead;
+                    // if (_selectedPinger.HostName == host.hostNoname)
+                    //     host.Status = HostStatus.Dead;
                 }
 
                 UpdateLED(host);
@@ -224,7 +224,7 @@ namespace WirelessProject
                 return;
             }
             UpdateList(host);
-          
+
         }
         private void UpdateList(PingObject host)
         {
@@ -240,7 +240,7 @@ namespace WirelessProject
                     item.SubItems[4].Text = host.ReceivedPackets.ToString();
                     item.SubItems[5].Text = PercentToString(host.ReceivedPacketsPercent);
                     item.SubItems[6].Text = host.LostPackets.ToString();
-                    item.SubItems[7].Text = host.MaxConsecutivePacketsLost.ToString();                    
+                    item.SubItems[7].Text = host.MaxConsecutivePacketsLost.ToString();
                     item.SubItems[8].Text = host.RecentlyLostPackets.ToString();
                     item.SubItems[9].Text = DurationToString(host.CurrentTestDuration);
                 }
@@ -255,7 +255,7 @@ namespace WirelessProject
 						host.RecentlyLostPackets.ToString(), 
 						DurationToString(host.CurrentTestDuration)
 					});
-						
+
                     _table.Add(host.ID, item);
                     item.Tag = host;
                     listViewPING.Items.Insert(0, item);
@@ -269,12 +269,12 @@ namespace WirelessProject
                         item.BackColor = Color.Red;
                         item.ForeColor = Color.White;
 
-                        
-                         // Keep the order!!
-                        host.OnPing -= new OnPingDelegate(OnHostPing);
-                        host.OnStopPinging -= new OnHostPingerCommandDelegate(OnStopPinging);
-                        host.OnStartPinging -= new OnHostPingerCommandDelegate(OnStartPinging);
-                        host.Stop();
+
+                        // Keep the order!!
+                        //host.OnPing -= new OnPingDelegate(OnHostPing);
+                        //host.OnStopPinging -= new OnHostPingerCommandDelegate(OnStopPinging);
+                        //host.OnStartPinging -= new OnHostPingerCommandDelegate(OnStartPinging);
+                        //host.Stop();
 
                         Wlog.log.Error(+pingEventID + ",1," + host.ID.ToString() + "," + host.HostInfo);
                         break;
@@ -289,6 +289,7 @@ namespace WirelessProject
                     case HostStatus.Alive:
                         item.BackColor = Color.LightGreen;
                         item.ForeColor = Color.Black;
+                        failPingStatus = false;
 
                         Wlog.log.Debug(+pingEventID + ",0," + host.ID.ToString() + "," + host.HostInfo);
                         break;
@@ -357,7 +358,7 @@ namespace WirelessProject
                 _selectedPinger = null;
 
             // Notify main to update its buttons states
-        //    OnPingFailed(_selectedPinger != null && _selectedPinger.IsRunning);
+            //    OnPingFailed(_selectedPinger != null && _selectedPinger.IsRunning);
         }
 
         #region Ping Menu Options
@@ -423,6 +424,6 @@ namespace WirelessProject
             }
         }
 
-        #endregion        
+        #endregion
     }
 }
